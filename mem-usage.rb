@@ -47,7 +47,7 @@ def print_tree(reports, maxtotal=nil, indent=0)
     print ' '*indent
     perc = data['_total'] / maxtotal.to_f * 100
     key = key.gsub(/ \(.+\)/, '')
-    puts "%s: %d" % [key, data['_total']]
+    puts "%s: %d (%.2f%%)" % [key, data['_total'], perc]
     print_tree(data, maxtotal, indent+2)
     if indent == 0
       puts
